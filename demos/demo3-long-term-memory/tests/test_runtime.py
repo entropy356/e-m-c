@@ -102,8 +102,10 @@ class RuntimeTests(unittest.TestCase):
                           return_value=self.result(used=[1])):
             trace = self.runtime.turn("Where is the spare key?")
         memory = self.runtime.inspect()["state"]["memories"][0]
+        decayed_weight = trace["decayed"][0]["weight_after"]
         self.assertEqual(trace["activated"][0]["id"], 1)
-        self.assertGreater(memory["weight"], before)
+        self.assertGreater(memory["weight"], decayed_weight)
+        self.assertLess(memory["weight"], before)
         self.assertGreater(memory["stability"], 0)
         self.assertEqual(memory["activated_count"], 1)
 
