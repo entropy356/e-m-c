@@ -17,3 +17,6 @@ jobs:
       - name: Run Demo 2 tests
         working-directory: demos/demo2-memory-dynamics
         run: python -m unittest discover -v
+      - name: Run Demo 3 tests
+        working-directory: demos/demo3-long-term-memory
+        run: python -m unittest discover -v
