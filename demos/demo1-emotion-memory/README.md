@@ -15,8 +15,8 @@
 需要 Python 3.10+。离线模式只使用标准库。
 
 ```bash
-git clone https://github.com/entropy356/agent-runtime.git
-cd agent-runtime/demos/demo1-emotion-memory
+git clone https://github.com/entropy356/e-m-c.git
+cd e-m-c/demos/demo1-emotion-memory
 python -m agent_runtime serve
 ```
 

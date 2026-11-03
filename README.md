@@ -1,6 +1,8 @@
-# Agent Runtime
+# e-m-c
 
-一个探索持续内部状态的 Agent Runtime 实验项目。
+> emotion, memory, clock
+
+一个探索持续内部状态的 agent runtime 实验项目。仓库名取自三块内容：Emotion、Memory、Clock。
 
 目标是**像人**，不是可靠或有用：它允许记错、执着于旧结论、因为当下情绪而想起不同的事。
 
