@@ -20,7 +20,7 @@
 
 ```bash
 cd demos/demo1-emotion-memory
-python -m agent_runtime serve
+python -m emc serve
 ```
 
 Python 3.10+；离线模式无需额外依赖。详见 [Demo 说明](demos/demo1-emotion-memory/README.md)。

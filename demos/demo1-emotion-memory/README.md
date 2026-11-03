@@ -17,7 +17,7 @@
 ```bash
 git clone https://github.com/entropy356/e-m-c.git
 cd e-m-c/demos/demo1-emotion-memory
-python -m agent_runtime serve
+python -m emc serve
 ```
 
 打开 `http://127.0.0.1:8765`，初始化示例实验后即可运行 A/B 对照。
@@ -172,7 +172,7 @@ export AGENT_EMBED_KEY='your-embedding-key'
 export AGENT_EMBED_DIMENSIONS='768'
 export AGENT_EMBED_PROXY='http://127.0.0.1:8080'   # 可选，仅嵌入侧
 
-python -m agent_runtime --mode api --db data/api.sqlite3 serve
+python -m emc --mode api --db data/api.sqlite3 serve
 ```
 
 `AGENT_EMBED_*` 省略时回落到 `AGENT_CHAT_*`；`AGENT_API_BASE` / `AGENT_API_KEY` 仍可顶替 `AGENT_CHAT_*`，即旧的单端点模式。
@@ -186,20 +186,20 @@ LLM 不直接接收 Emotion 向量，Emotion 对回答的影响经由检索间�
 ## 命令行
 
 ```bash
-python -m agent_runtime seed
-python -m agent_runtime compare
-python -m agent_runtime step '我们再一起试一次吧。'
-python -m agent_runtime save after-chat
-python -m agent_runtime restore A
-python -m agent_runtime state
-python -m agent_runtime replaced
+python -m emc seed
+python -m emc compare
+python -m emc step '我们再一起试一次吧。'
+python -m emc save after-chat
+python -m emc restore A
+python -m emc state
+python -m emc replaced
 python -m unittest discover -v
 ```
 
 更多参数见：
 
 ```bash
-python -m agent_runtime --help
+python -m emc --help
 ```
 
 ## 局限

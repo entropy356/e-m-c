@@ -1,7 +1,7 @@
 import unittest
 from unittest.mock import patch
 
-from agent_runtime.runtime import RECALL_K, Runtime
+from emc.runtime import RECALL_K, Runtime
 from tests import test_runtime as fixtures
 
 

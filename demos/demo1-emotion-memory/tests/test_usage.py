@@ -1,7 +1,7 @@
 import unittest
 from unittest.mock import patch
 
-from agent_runtime.runtime import USAGE_WINDOW, rank, usage_frequency
+from emc.runtime import USAGE_WINDOW, rank, usage_frequency
 from tests import test_runtime as fixtures
 
 

@@ -16,7 +16,7 @@ class HTTPTests(unittest.TestCase):
         self.temp = tempfile.TemporaryDirectory()
         self.addCleanup(self.temp.cleanup)
         self.process = subprocess.Popen([
-            sys.executable, "-u", "-m", "agent_runtime", "--db",
+            sys.executable, "-u", "-m", "emc", "--db",
             str(Path(self.temp.name) / "http.sqlite3"), "serve", "--port", "0", "--interval", "0.25"],
             stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
         self.addCleanup(self.stop)

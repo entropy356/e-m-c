@@ -3,8 +3,8 @@ import unittest
 from unittest.mock import patch
 
 from tests import test_runtime as fixtures
-from agent_runtime.providers import OfflineProvider
-from agent_runtime.runtime import Runtime
+from emc.providers import OfflineProvider
+from emc.runtime import Runtime
 
 
 class MemoryRelationTests(unittest.TestCase):

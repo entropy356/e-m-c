@@ -16,7 +16,7 @@ demos/
     ├── README.md
     ├── experiments/
     ├── results/
-    ├── agent_runtime/
+    ├── emc/
     └── tests/
 ```
 

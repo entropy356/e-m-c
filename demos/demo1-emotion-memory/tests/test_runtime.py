@@ -6,8 +6,8 @@ import tempfile
 import unittest
 from unittest.mock import patch
 
-from agent_runtime.providers import APIProvider, OfflineProvider, unit
-from agent_runtime.runtime import Runtime, centered, centroid, dot, rank, sigmoid
+from emc.providers import APIProvider, OfflineProvider, unit
+from emc.runtime import Runtime, centered, centroid, dot, rank, sigmoid
 
 
 class RuntimeTests(unittest.TestCase):
@@ -259,7 +259,7 @@ class APIAdapterTests(unittest.TestCase):
     def test_cognition_prompt_does_not_leak_emotion_or_full_history(self):
         memory = {"id": 1, "content": "可见内容", "appraisal": "不应进入提示", "affect": [1234]}
         response = {"choices": [{"message": {"content": json.dumps({"answer": "ok"})}}]}
-        with patch("agent_runtime.providers._request", return_value=response) as request:
+        with patch("emc.providers._request", return_value=response) as request:
             self.provider.cognize("当前输入", [memory])
         payload = request.call_args.args[1]
         user = json.loads(payload["messages"][1]["content"])
@@ -275,23 +275,23 @@ class APIAdapterTests(unittest.TestCase):
         # reason to ask for more, which is exactly what the first live run did.
         response = {"choices": [{"message": {"content": json.dumps(
             {"answer": "ok", "appraisal": "平静"})}}]}
-        with patch("agent_runtime.providers._request", return_value=response) as request:
+        with patch("emc.providers._request", return_value=response) as request:
             self.provider.cognize("输入", [], 2, library_size=9)
         user = json.loads(request.call_args.args[1]["messages"][1]["content"])
         self.assertEqual((user["recall_left"], user["library_size"]), (2, 9))
 
     def test_malformed_provider_output_is_rejected(self):
-        with patch("agent_runtime.providers._request", return_value={"choices": [{"message": {"content": "not JSON"}}]}):
+        with patch("emc.providers._request", return_value={"choices": [{"message": {"content": "not JSON"}}]}):
             with self.assertRaises(ValueError):
                 self.provider.cognize("输入", [])
 
     def test_cognition_recovers_fenced_json(self):
         fenced = '```json\n{"answer": "ok"}\n```'
-        with patch("agent_runtime.providers._request", return_value={"choices": [{"message": {"content": fenced}}]}):
+        with patch("emc.providers._request", return_value={"choices": [{"message": {"content": fenced}}]}):
             self.assertEqual(self.provider.cognize("输入", []), {"answer": "ok"})
 
     def test_embedding_response_normalized_and_validated(self):
-        with patch("agent_runtime.providers._request", return_value={"data": [{"embedding": [3, 4]}]}) as request:
+        with patch("emc.providers._request", return_value={"data": [{"embedding": [3, 4]}]}) as request:
             self.assertEqual(self.provider.embed("输入"), [.6, .8])
         self.assertEqual(request.call_args.args[0], "https://embed.invalid/v1/embeddings")
         self.assertEqual(request.call_args.args[1]["dimensions"], 768)
@@ -301,7 +301,7 @@ class APIAdapterTests(unittest.TestCase):
                                        "AGENT_EMBED_BASE": "https://gemini.invalid/v1beta",
                                        "AGENT_EMBED_MODEL": "gemini-embedding-001"}):
             provider = APIProvider()
-        with patch("agent_runtime.providers._request",
+        with patch("emc.providers._request",
                    return_value={"embedding": {"values": [0, 5]}}) as request:
             self.assertEqual(provider.embed("文档", "document"), [0.0, 1.0])
         url, payload, headers = request.call_args.args[:3]
