@@ -76,3 +76,58 @@ Fushun Wang, Jiongjiong Yang, Fang Pan, Roger C. Ho, Jason H. Huang. *Frontiers 
 - 视频所述“2012 年情绪立方”与 Lövheim（2012）对应。
 - 视频所述“2020 年中国团队的情绪三原色”与 Wang 等（2020）社论高度吻合，尚未通过视频参考文献列表确认。
 - 其他条目来自论文引用追踪或相关研究检索，不表示视频直接引用了它们。
+
+## 记忆提取、衰减与巩固
+
+### Bjork 与 Bjork（1992）：New Theory of Disuse
+
+**A New Theory of Disuse and an Old Theory of Stimulus Fluctuation**
+
+- [UCLA Bjork Lab：原文 PDF](https://bjorklab.psych.ucla.edu/wp-content/uploads/sites/13/2016/07/RBjork_EBjork_1992.pdf)
+- [Bjork Lab：理论与研究简介](https://bjorklab.psych.ucla.edu/research/)
+
+区分 `retrieval strength`（当前可提取性）与 `storage strength`（学习/储存强度），讨论提取、干扰与后续学习的关系。可为 Memory 的权重与稳定性分离提供理论参照；**不能据此认定 e-m-c 的变量或衰减公式等同于人脑机制**。
+
+### Bjork 与 Bjork（2011）：Desirable Difficulties
+
+**Making Things Hard on Yourself, But in a Good Way: Creating Desirable Difficulties to Enhance Learning**
+
+- [UCLA Bjork Lab：章节原文 PDF](https://bjorklab.psych.ucla.edu/wp-content/uploads/sites/13/2016/11/Making-Things-Hard-on-Yourself-but-in-a-Good-Way-20111.pdf)
+
+讨论间隔、提取难度与长期保持之间的联系。可用于设计“相同使用次数、不同提取间隔”的对照实验；并不意味着每次低权重提取都应无条件获得更多强化。
+
+### de Snoo 与 Frankland（2025）：跨时间尺度的遗忘
+
+**Neurobiological mechanisms of forgetting across timescales**
+
+Mitchell L. de Snoo, Paul W. Frankland. *Current Opinion in Neurobiology*, 90:102972.
+
+- [DOI / 期刊入口](https://doi.org/10.1016/j.conb.2025.102972)
+- [PubMed 摘要与书目信息](https://pubmed.ncbi.nlm.nih.gov/39892316/)
+
+综述不同时间尺度上使记忆痕迹更难访问的机制，提示“不可提取”不必等同于“痕迹已删除”。可供比较逐轮衰减、干扰与可访问性变化，但不直接给出可照搬的 Agent 参数。
+
+## 相关实现与 Runtime 架构
+
+### e-m-c.runtime：独立长期记忆 Runtime 实验
+
+- [代码仓库与运行说明](https://github.com/entropy356/e-m-c.runtime)
+
+独立的无 Emotion 长期记忆聊天实验，包含完整对话历史、逐轮记忆动态、Chat/Embedding 接入以及状态查看工具。用于对照持久状态、认知流程与实验可观测性的实现；**不等于本仓库已集成该实现**。
+
+### DeepSeek Harness：可组合的 Agent Harness
+
+- [代码仓库](https://github.com/deepseek-ai/deepseek-harness)
+- [架构文档](https://github.com/deepseek-ai/deepseek-harness/blob/master/docs/architecture.md)
+- [Cordis：其使用的组合式插件框架](https://github.com/cordiverse/cordis)
+
+参考能力组合、模块生命周期及宿主与功能边界。e-m-c 可以借鉴这些架构问题的处理方式，但不必直接引入完整插件体系。
+
+### THU-CoAI ECM：情绪条件化对话生成
+
+**Emotional Chatting Machine: Emotional Conversation Generation with Internal and External Memory**
+
+- [论文（arXiv）](https://arxiv.org/abs/1704.01074)
+- [实现（thu-coai/ecm）](https://github.com/thu-coai/ecm)
+
+使用情绪标签和内部/外部记忆机制生成带有情绪色彩的回应。适合作为“情绪如何影响对话生成”的方法对照；其目标是情绪条件化的回复生成，**不是** e-m-c 要研究的连续内部状态 Runtime。

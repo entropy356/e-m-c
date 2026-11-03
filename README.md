@@ -11,6 +11,7 @@
 - [核心设计](docs/design.md)
 - [项目规范](docs/vision.md)
 - [Demo 规则](docs/demos.md)
+- [参考资料：论文、相关实现与架构](docs/references.md)
 
 ## 当前 Demo
 
@@ -24,3 +25,7 @@ python -m emc serve
 ```
 
 Python 3.10+；离线模式无需额外依赖。详见 [Demo 说明](demos/demo1-emotion-memory/README.md)。
+
+## 关联实验
+
+- [e-m-c.runtime](https://github.com/entropy356/e-m-c.runtime)：独立的无 Emotion 长期记忆聊天 Runtime 实验；与本仓库的 Demo 1 分开维护。
