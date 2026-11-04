@@ -10,7 +10,7 @@
 - 多 Agent 可正常提交、拉取、推送；推送前先同步并处理冲突。临时分支不合并、不创建 PR。
 - 重要结果应单独整合进正式代码、测试或文档；不要通过合并临时分支保留过程历史。
 - 达成结束条件后，提交 `.scratch/DONE` 作为结束标志；不要在标记完成后继续向该分支写入。
-- `main` 上的 [清理工作流](../.github/workflows/scratch-cleanup.yml) 每日检查，也可以手动运行。仅删除同时存在 `TASK.md` 与 `.scratch/DONE` 的 `scratch/` 分支。未完成的分支不会因为时间过去而自动删除。
+- 每个临时分支都应携带从 `main` 复制的 [清理工作流](../.github/workflows/scratch-cleanup.yml)。当 `.scratch/DONE` 被推送时，由该分支的 `push` 事件立即触发清理；工作流只会在存在 `TASK.md` 和完成标志、且分支未发生后续更新时删除它。无需定时扫描。
 - 不放入密钥或敏感数据。删除分支只移除 Git 引用，不能保证 GitHub 缓存、PR 引用或既有克隆中的历史立即消失。
 
 ## 创建
@@ -19,12 +19,14 @@
 git clone --depth 1 --single-branch --branch main https://github.com/entropy356/e-m-c.git e-m-c-scratch
 cd e-m-c-scratch
 git switch --orphan scratch/runtime-review
+# 孤立分支无父提交，但可从 main 复制所需的工作流文件
+git restore --source=main -- .github/workflows/scratch-cleanup.yml
 cat > TASK.md <<'EOF'
 # Runtime review
 purpose: Agent 之间交换运行时架构审查材料
 done_when: 结论已整合进正式代码或文档，且不再需要临时交流
 EOF
-git add TASK.md
+git add TASK.md .github/workflows/scratch-cleanup.yml
 git commit -m "Start scratch/runtime-review"
 git push -u origin HEAD
 ```
@@ -49,4 +51,4 @@ git commit -m "Finish scratch task"
 git push
 ```
 
-工作流下一次检查时会删除远程分支；需要立即清理时可在 GitHub Actions 页面手动运行 **Scratch branch cleanup**。也可以直接执行 `git push origin --delete scratch/runtime-review`。
+推送含 `.scratch/DONE` 的提交将触发分支内的工作流删除远程分支。若工作流被禁用、缺失或权限不足，可手动执行 `git push origin --delete scratch/runtime-review`。
