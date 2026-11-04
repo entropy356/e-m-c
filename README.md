@@ -12,7 +12,7 @@
 - [项目规范](docs/guidelines.md)
 - [Demo 规则](docs/demos.md)
 - [可用资料](docs/references.md)
-- [临时协作分支约定](docs/scratch-branches.md)
+- [临时分支文件交换](docs/scratch-branches.md)
 
 ## 当前 Demo
 
