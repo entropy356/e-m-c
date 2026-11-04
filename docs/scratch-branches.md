@@ -11,6 +11,7 @@
 - 重要结果应单独整合进正式代码、测试或文档；不要通过合并临时分支保留过程历史。
 - 达成结束条件后，提交 `.scratch/DONE` 作为结束标志；不要在标记完成后继续向该分支写入。
 - 每个临时分支都应携带从 `main` 复制的 [清理工作流](../.github/workflows/scratch-cleanup.yml)。当 `.scratch/DONE` 被推送时，由该分支的 `push` 事件立即触发清理；工作流只会在存在 `TASK.md` 和完成标志、且分支未发生后续更新时删除它。无需定时扫描。
+- 注意：由 GitHub Actions 自身的 `GITHUB_TOKEN` 发起的 `push` 不会触发新的 `push` 工作流。此类 Agent 应改用具有权限的 GitHub App / PAT 提交结束标志，或直接调用 GitHub API 删除分支。
 - 不放入密钥或敏感数据。删除分支只移除 Git 引用，不能保证 GitHub 缓存、PR 引用或既有克隆中的历史立即消失。
 
 ## 创建
