@@ -11,7 +11,7 @@
 - [核心设计](docs/design.md)
 - [项目规范](docs/guidelines.md)
 - [Demo 规则](docs/demos.md)
-- [参考资料：论文、相关实现与架构](docs/references.md)
+- [可用资料](docs/references.md)
 - [临时协作分支约定](docs/scratch-branches.md)
 
 ## 当前 Demo
