@@ -70,13 +70,6 @@ Fushun Wang, Jiongjiong Yang, Fang Pan, Roger C. Ho, Jason H. Huang. *Frontiers 
 
 使用 NEST 模拟多巴胺、血清素、去甲肾上腺素子系统，并把情绪模型连接到计算过程和资源调节。可用于查找“持续内部状态如何调节计算资源、决策与调度”的实现思路。其参考文献还包含 NEUCOGAR 神经调质认知架构相关研究。
 
-## 来源线索
-
-- [B 站视频](https://www.bilibili.com/video/BV1KDdUYbEB2/)（[短链接](https://b23.tv/MgVJcSC)）：上述资料检索的线索来源。
-- 视频所述“2012 年情绪立方”与 Lövheim（2012）对应。
-- 视频所述“2020 年中国团队的情绪三原色”与 Wang 等（2020）社论高度吻合，尚未通过视频参考文献列表确认。
-- 其他条目来自论文引用追踪或相关研究检索，不表示视频直接引用了它们。
-
 ## 记忆提取、衰减与巩固
 
 ### Bjork 与 Bjork（1992）：New Theory of Disuse
@@ -131,3 +124,10 @@ Mitchell L. de Snoo, Paul W. Frankland. *Current Opinion in Neurobiology*, 90:10
 - [实现（thu-coai/ecm）](https://github.com/thu-coai/ecm)
 
 使用情绪标签和内部/外部记忆机制生成带有情绪色彩的回应。适合作为“情绪如何影响对话生成”的方法对照；其目标是情绪条件化的回复生成，**不是** e-m-c 要研究的连续内部状态 Runtime。
+
+## 来源线索
+
+- [B 站视频](https://www.bilibili.com/video/BV1KDdUYbEB2/)（[短链接](https://b23.tv/MgVJcSC)）：上述资料检索的线索来源。
+- 视频所述“2012 年情绪立方”与 Lövheim（2012）对应。
+- 视频所述“2020 年中国团队的情绪三原色”与 Wang 等（2020）社论高度吻合，尚未通过视频参考文献列表确认。
+- 其他条目来自论文引用追踪或相关研究检索，不表示视频直接引用了它们。
