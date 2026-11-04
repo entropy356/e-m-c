@@ -1,0 +1,45 @@
+name: Scratch branch cleanup
+
+on:
+  schedule:
+    - cron: '41 3 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: scratch-branch-cleanup
+  cancel-in-progress: false
+
+jobs:
+  remove-completed:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Delete explicitly completed scratch branches
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          gh api --paginate \
+            "repos/${GITHUB_REPOSITORY}/git/matching-refs/heads/scratch/" \
+            --jq '.[] | select(.ref | startswith("refs/heads/scratch/")) | [.ref, .object.sha] | @tsv' |
+          while IFS=$'\t' read -r ref initial_sha; do
+            branch="${ref#refs/heads/}"
+            if ! gh api -X GET "repos/${GITHUB_REPOSITORY}/contents/TASK.md" -f ref="$branch" >/dev/null 2>&1; then
+              echo "Skip $branch: missing TASK.md"
+              continue
+            fi
+            if ! gh api -X GET "repos/${GITHUB_REPOSITORY}/contents/.scratch/DONE" -f ref="$branch" >/dev/null 2>&1; then
+              echo "Skip $branch: not marked DONE"
+              continue
+            fi
+            current_sha="$(gh api "repos/${GITHUB_REPOSITORY}/git/ref/heads/${branch}" --jq '.object.sha' || true)"
+            if [[ "$current_sha" != "$initial_sha" ]]; then
+              echo "Skip $branch: branch changed during scan"
+              continue
+            fi
+            echo "Deleting completed branch: $branch"
+            gh api -X DELETE "repos/${GITHUB_REPOSITORY}/git/refs/heads/${branch}"
+          done
