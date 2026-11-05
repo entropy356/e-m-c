@@ -6,9 +6,9 @@
 
 ## 文档
 
+- [设计原则](docs/principles.md)：总体与局部的设计取向
 - [核心设计](docs/design.md)：Emotion、Memory、Clock 与认知的概念边界
-- [项目规范](docs/guidelines.md)：总体原则、局部原则与记录方式
-- [Demo 组织规则](docs/demos.md)：实验的拆分与演化
+- [Demo 与实验约定](docs/demos.md)：实验组织、验证方式及记录规则
 - [参考资料](docs/references.md)：论文、相关实现与架构
 - [Draft 严格隔离](docs/drafts.md)：临时文件、目录、分支和仓库的统一规则
 
