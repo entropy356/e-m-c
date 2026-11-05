@@ -10,7 +10,7 @@
 - [项目规范](docs/guidelines.md)：总体原则、局部原则与记录方式
 - [Demo 组织规则](docs/demos.md)：实验的拆分与演化
 - [参考资料](docs/references.md)：论文、相关实现与架构
-- [临时分支](docs/scratch-branches.md)：跨 Agent 或设备交换文件
+- [Draft 严格隔离](docs/drafts.md)：临时文件、目录、分支和仓库的统一规则
 
 ## 当前实验
 
