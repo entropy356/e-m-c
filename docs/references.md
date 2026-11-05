@@ -1,8 +1,6 @@
 # 情绪化记忆库与时间感知：参考资料
 
-围绕**情绪如何参与记忆的形成与提取**、**记忆在时间中的变化**及**时间感知的可能机制**整理资料，并保留相关基础设施实现的参考链接。条目说明只用于定位原文，不表示相应理论已被本项目验证。
-
-现有资料主要覆盖情绪状态、记忆提取与跨时间尺度遗忘；**对时间感知本身（例如持续时间判断、事件间隔与主观时间）的直接资料仍不足**。不能用“存在 Clock 或时间戳”代替这部分研究。
+收录与情绪、记忆、时间尺度及相关基础设施有关的论文和实现，便于定位原始资料。各条目说明其主要内容和与项目的关联。
 
 ## 情绪、单胺与状态空间
 
@@ -81,7 +79,7 @@ Fushun Wang, Jiongjiong Yang, Fang Pan, Roger C. Ho, Jason H. Huang. *Frontiers 
 - [UCLA Bjork Lab：原文 PDF](https://bjorklab.psych.ucla.edu/wp-content/uploads/sites/13/2016/07/RBjork_EBjork_1992.pdf)
 - [Bjork Lab：理论与研究简介](https://bjorklab.psych.ucla.edu/research/)
 
-区分 `retrieval strength`（当前可提取性）与 `storage strength`（学习/储存强度），讨论提取、干扰与后续学习的关系。可为 Memory 的权重与稳定性分离提供理论参照；**不能据此认定 e-m-c 的变量或衰减公式等同于人脑机制**。
+区分 `retrieval strength`（当前可提取性）与 `storage strength`（学习/储存强度），讨论提取、干扰与后续学习的关系。为区分记忆的存储强度和提取强度提供理论参照。
 
 ### Bjork 与 Bjork（2011）：Desirable Difficulties
 
@@ -89,7 +87,7 @@ Fushun Wang, Jiongjiong Yang, Fang Pan, Roger C. Ho, Jason H. Huang. *Frontiers 
 
 - [UCLA Bjork Lab：章节原文 PDF](https://bjorklab.psych.ucla.edu/wp-content/uploads/sites/13/2016/11/Making-Things-Hard-on-Yourself-but-in-a-Good-Way-20111.pdf)
 
-讨论间隔、提取难度与长期保持之间的联系。可用于设计“相同使用次数、不同提取间隔”的对照实验；并不意味着每次低权重提取都应无条件获得更多强化。
+讨论提取间隔、学习难度与长期保持之间的关系。
 
 ### de Snoo 与 Frankland（2025）：跨时间尺度的遗忘
 
@@ -100,15 +98,15 @@ Mitchell L. de Snoo, Paul W. Frankland. *Current Opinion in Neurobiology*, 90:10
 - [DOI / 期刊入口](https://doi.org/10.1016/j.conb.2025.102972)
 - [PubMed 摘要与书目信息](https://pubmed.ncbi.nlm.nih.gov/39892316/)
 
-综述不同时间尺度上使记忆痕迹更难访问的机制，提示“不可提取”不必等同于“痕迹已删除”。可供比较逐轮衰减、干扰与可访问性变化，但不直接给出可照搬的 Agent 参数。
+综述不同时间尺度上使记忆痕迹更难访问的机制，提示“不可提取”不必等同于“痕迹已删除”。可用于理解记忆可访问性与跨时间尺度变化之间的关系。
 
 ## 实验支撑与基础设施参考
 
-### e-m-c.runtime：由实验抽离的 Runtime 原型
+### e-m-c.runtime：Runtime 基础设施原型
 
 - [代码仓库与运行说明](https://github.com/entropy356/e-m-c.runtime)
 
-从无 Emotion 长期记忆聊天实验中抽离，保留了对话历史、逐轮记忆动态、Chat/Embedding 接入及状态查看等能力。**目标是通过模块化重构成为可供不同实验复用的基础设施**；当前仍以特定认知流程组织，尚未集成进本仓库。
+当前实现长期记忆聊天、状态持久化、Chat/Embedding 接入及状态查看能力。目标是通过模块化重构形成供不同实验复用的基础设施。
 
 ### DeepSeek Harness：可组合的 Agent Harness
 
@@ -116,7 +114,7 @@ Mitchell L. de Snoo, Paul W. Frankland. *Current Opinion in Neurobiology*, 90:10
 - [架构文档](https://github.com/deepseek-ai/deepseek-harness/blob/master/docs/architecture.md)
 - [Cordis：其使用的组合式插件框架](https://github.com/cordiverse/cordis)
 
-参考能力组合、模块生命周期及宿主与功能边界。e-m-c 可以借鉴这些架构问题的处理方式，但不必直接引入完整插件体系。
+可参考其模块组合、生命周期及宿主与模块的边界设计。
 
 ### THU-CoAI ECM：情绪条件化对话生成
 
@@ -125,7 +123,7 @@ Mitchell L. de Snoo, Paul W. Frankland. *Current Opinion in Neurobiology*, 90:10
 - [论文（arXiv）](https://arxiv.org/abs/1704.01074)
 - [实现（thu-coai/ecm）](https://github.com/thu-coai/ecm)
 
-使用情绪标签和内部/外部记忆机制生成带有情绪色彩的回应。适合作为“情绪如何影响对话生成”的方法对照；其目标是情绪条件化回复生成，**不直接研究情绪化记忆的长期演化或时间感知**。
+使用情绪标签和内部/外部记忆机制生成带有情绪色彩的回应，可作为情绪影响对话生成的相关实现。
 
 ## 来源线索
 

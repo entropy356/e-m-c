@@ -1,6 +1,6 @@
 # Draft 严格隔离
 
-Draft 用于暂存情绪化记忆库与时间感知研究中的思考、实验材料、时间线索或跨 Agent / 设备交换的文件。它可以存在任意时长，但不得成为其他对象的依赖。
+Draft 用于暂存笔记、实验材料或跨 Agent / 设备交换文件。它可以存在任意时长，并遵守以下严格隔离约束。
 
 ## 命名与边界
 
@@ -8,10 +8,10 @@ Draft 用于暂存情绪化记忆库与时间感知研究中的思考、实验�
 
 | 类型 | 名称示例 | 隔离范围 |
 | --- | --- | --- |
-| 文件 | `memory-hypothesis.draft` | 该文件 |
-| 目录 | `time-observation.draft/` | 目录及其全部内容 |
-| Git 分支 | `affect-review.draft` | 该分支的工作内容 |
-| Git 仓库 | `clock-prototype.draft` | 仓库内的全部内容 |
+| 文件 | `memory.draft` | 该文件 |
+| 目录 | `research.draft/` | 目录及其全部内容 |
+| Git 分支 | `review.draft` | 该分支的工作内容 |
+| Git 仓库 | `prototype.draft` | 仓库内的全部内容 |
 
 在一个 Draft 内部创建的文件属于该 Draft；嵌套的 `.draft` 对象另有自己的隔离边界。
 
