@@ -102,11 +102,11 @@ Mitchell L. de Snoo, Paul W. Frankland. *Current Opinion in Neurobiology*, 90:10
 
 ## 相关实现与 Runtime 架构
 
-### e-m-c.runtime：独立长期记忆 Runtime 实验
+### e-m-c.runtime：由实验抽离的 Runtime 原型
 
 - [代码仓库与运行说明](https://github.com/entropy356/e-m-c.runtime)
 
-独立的无 Emotion 长期记忆聊天实验，包含完整对话历史、逐轮记忆动态、Chat/Embedding 接入以及状态查看工具。用于对照持久状态、认知流程与实验可观测性的实现；**不等于本仓库已集成该实现**。
+从无 Emotion 长期记忆聊天实验中抽离，保留了对话历史、逐轮记忆动态、Chat/Embedding 接入及状态查看等能力。**目标是通过模块化重构成为可供不同实验复用的基础设施**；当前仍以特定认知流程组织，尚未集成进本仓库。
 
 ### DeepSeek Harness：可组合的 Agent Harness
 
