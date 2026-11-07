@@ -1,6 +1,6 @@
 # 元规范与意义引用
 
-规范正文见 [文档](documentation.md)、[Draft](drafts.md) 和 [实验](experiments.md)；本文件记录元规范、可供引用的背景，以及规则存在意义的关联。除 `[root]` 外，现有条目均待审议，不因列在此处就视为已确认。
+规范正文见 [文档](documentation.md)、[Draft](drafts.md) 和 [实验](experiments.md)；本文件记录元规范、可供引用的背景，以及规则存在意义的关联。只有 `[root]` 表示已确认的根规范；其他条目不因列在此处就自动成为根规范或获得额外效力。
 
 ## 记法
 
@@ -22,6 +22,8 @@ effective-output:[pragmatism|agent-reader] = 规范无需正确，只要 Agent �
 importance:[] = 规范按重要性排列
 
 justifiable-value:[pragmatism] = 每条规范在受到质疑时，都应能说明其存在的实际价值；不要求事先写出说明或填写意义引用
+
+minimize-negative-expression:[] = 减少不必要的负面表述
 
 organization:[] = 规范按作用对象分文件，文件内部按规则性质分块
 
