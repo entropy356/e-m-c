@@ -31,7 +31,6 @@ python -m emc serve
 ## 文档与约定
 
 - [概念模型](docs/model.md)：情绪、记忆和时间的研究概念
-- [参考资料](docs/references.md)：论文与相关实现
 - [实验约定](rules/experiments.md)：Demo 组织、验证与记录
 - [文档规范](rules/documentation.md)：最小化历史、简洁表述与文档组织
 - [Draft 隔离](rules/drafts.md)：临时文件、目录、分支和仓库的隔离规则
