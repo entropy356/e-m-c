@@ -9,7 +9,7 @@
 - `[root]`：根规范，无需其他原因。
 - `[]`：不指定原因，适用于元规范与作为依据的事实。
 - `[?]`：非元规范必填的原因尚未确定；可以与已知原因并列，如 `[agent-reader|?]`。
-- 跨文件规范直接使用 Markdown 链接，不复制正文。
+- 跨文件规范采用 `[文件.md #章节](文件.md#章节):[原因1|原因2]`，无需另设标识符，也不复制正文。
 - 章节内的列表、表格和段落属于该章节的内部结构，不自动成为独立规范。
 
 ## 元规范
@@ -48,22 +48,22 @@ experiment-infrastructure:[] = 实验提出、检验共用能力需求，基础�
 
 ### 文档
 
-documentation-minimize-history:[git-history|self-contained] = [documentation.md #最小化历史](documentation.md#最小化历史)
+[documentation.md #最小化历史](documentation.md#最小化历史):[git-history|self-contained]
 
-documentation-wording:[agent-reader|?] = [documentation.md #表述](documentation.md#表述)
+[documentation.md #表述](documentation.md#表述):[agent-reader|?]
 
-documentation-organization:[organization|?] = [documentation.md #组织](documentation.md#组织)
+[documentation.md #组织](documentation.md#组织):[organization|?]
 
 ### Draft
 
-drafts-naming:[draft-temporary|?] = [drafts.md #命名与边界](drafts.md#命名与边界)
+[drafts.md #命名与边界](drafts.md#命名与边界):[draft-temporary|?]
 
-drafts-isolation:[draft-temporary|draft-independent] = [drafts.md #必须遵守](drafts.md#必须遵守)
+[drafts.md #必须遵守](drafts.md#必须遵守):[draft-temporary|draft-independent]
 
-drafts-cleanup:[draft-temporary] = [drafts.md #使用与清理](drafts.md#使用与清理)
+[drafts.md #使用与清理](drafts.md#使用与清理):[draft-temporary]
 
 ### 实验
 
-experiments-evolution:[demo-question|experiment-infrastructure|?] = [experiments.md #Demo 的演化](experiments.md#demo-的演化)
+[experiments.md #Demo 的演化](experiments.md#demo-的演化):[demo-question|experiment-infrastructure|?]
 
-experiments-verification:[?] = [experiments.md #验证与记录](experiments.md#验证与记录)
+[experiments.md #验证与记录](experiments.md#验证与记录):[?]
