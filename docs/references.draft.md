@@ -6,6 +6,22 @@
 - 允许暂存未经充分核实的线索，存在不确定性时明确标注。收录不代表认可其论断或决定采用其方案。
 - 本文件是资料收集草稿，不作为项目正式结论、架构决策或实现依赖。经过核实和整理的成果应独立写入正式文档。
 
+## 近期关注的 Agent 基础设施与工作流
+
+### DeepSeek Harness：可组合的 Agent Harness
+
+- [代码仓库](https://github.com/deepseek-ai/deepseek-harness)
+- [架构文档](https://github.com/deepseek-ai/deepseek-harness/blob/master/docs/architecture.md)
+- [Cordis：其使用的组合式插件框架](https://github.com/cordiverse/cordis)
+
+可参考其模块组合、生命周期及宿主与模块的边界设计。
+
+### dsh-superagent-prototype：仓库开发 Agent 研究原型
+
+- [代码仓库](https://github.com/deepseek-ai/dsh-superagent-prototype)
+
+基于 DeepSeek Harness 的单仓库主动式编码 Agent 原型，可参考其任务授权、隔离执行、GitHub 交互与减少人工注意力负担的工作流。仓库明确标注为研究原型，并非生产就绪的软件。
+
 ## 情绪、单胺与状态空间
 
 ### Lövheim（2012）：情绪立方
@@ -111,14 +127,6 @@ Mitchell L. de Snoo, Paul W. Frankland. *Current Opinion in Neurobiology*, 90:10
 - [代码仓库与运行说明](https://github.com/entropy356/e-m-c.runtime)
 
 当前实现长期记忆聊天、状态持久化、Chat/Embedding 接入及状态查看能力。目标是通过模块化重构形成供不同实验复用的基础设施。
-
-### DeepSeek Harness：可组合的 Agent Harness
-
-- [代码仓库](https://github.com/deepseek-ai/deepseek-harness)
-- [架构文档](https://github.com/deepseek-ai/deepseek-harness/blob/master/docs/architecture.md)
-- [Cordis：其使用的组合式插件框架](https://github.com/cordiverse/cordis)
-
-可参考其模块组合、生命周期及宿主与模块的边界设计。
 
 ### THU-CoAI ECM：情绪条件化对话生成
 
