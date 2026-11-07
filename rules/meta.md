@@ -17,6 +17,7 @@
 
 ```text
 标识符:[被细化的规范1|被细化的规范2] = 规范内容
+
     - 意义1
     - 意义2
 ```
@@ -35,9 +36,11 @@ pragmatism:[root] = 规范遵循实用主义
 agent-reader:[root] = 规范是给 Agent 读的
 
 justifiable-value:[pragmatism] = 每条规范都应能在受到质疑时解释其存在价值
+
     - 使规范能够根据实际价值被评估、修改或删除。
     - 避免缺乏实际收益的规范长期积累。
 
 minimize-negative-expression:[] = 减少不必要的负面表述
+
     - 减少无实际必要的限制。
     - 使规范更直接地表达期望行为。
