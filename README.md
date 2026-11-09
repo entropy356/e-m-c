@@ -6,5 +6,5 @@ e-m-c 探索通过外部持久化状态支持 Agent 的持续认知，重点关�
 
 ## 项目约定
 
-- [文档与文件约定](rules/documentation.md)
+- **开发前必读**：[documentation.md](rules/documentation.md)
 - [Draft 隔离](rules/drafts.md)
