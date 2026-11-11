@@ -1,0 +1,42 @@
+name: Archive AI endorsements
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: endorsement-main
+  cancel-in-progress: false
+
+jobs:
+  archive-and-clean:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Test endorsement maintenance
+        run: python3 -m unittest discover -s tests -v
+      - name: Archive new endorsements and remove stale endorsements
+        shell: bash
+        env:
+          BEFORE: ${{ github.event.before }}
+          HEAD_COMMIT: ${{ github.sha }}
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          python3 scripts/endorsements.py --before "$BEFORE" --head "$HEAD_COMMIT"
+          if [ -s .git/endorsement-tags ]; then
+            while IFS= read -r tag; do
+              git push origin "refs/tags/$tag"
+            done < .git/endorsement-tags
+          fi
+          if ! git diff --quiet -- '*.md'; then
+            git add -- '*.md'
+            git commit -m 'chore: remove stale AI endorsements'
+            git push origin HEAD:main
+          fi
