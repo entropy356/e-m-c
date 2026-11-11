@@ -25,7 +25,7 @@
   - 个人喜好
 - [文档：简洁](documentation.md#文档约定)：实测写入「简洁」二字即可让 Agent 简洁。
 - [文档：删除痕迹](documentation.md#文档约定)：现阶段 LLM 习惯于给已删内容立墓碑。2026-11-11
-- [文档：认可署名](documentation.md#文档约定)：增强 AI 的人格一致性。
+- [文档：认可署名](documentation.md#文档约定)：避免思维习惯不同的 AI 互相干扰或次等 AI 影响决策。
 - [文档：文件职责](documentation.md#文件职责)：?
 - [Draft：设立目的](drafts.md)：让临时内容有处可去。个人推断，这可以增强正式内容的简洁性。
 - [Draft：命名与边界](drafts.md#命名与边界)：
