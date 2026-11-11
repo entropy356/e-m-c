@@ -17,4 +17,4 @@ e-m-c 探索通过外部持久化状态支持 Agent 的持续认知，重点关�
 
 ## 工具约定
 
-- 开发接入 DSH 插件时，以 DSH Desktop 版为主。
+- 对接 DSH 时，以 DSH Desktop 为主要目标环境；e-m-c 作为独立可选的 Agent Preset（Agent 模式）呈现。
