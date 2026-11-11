@@ -81,3 +81,13 @@ e-m-c 是探索类人 Agent 的一项小型研究，当前主要关注通过外�
 以研究目标和数学模型指导工程实现，以实验反馈修正模型。
 
 具体数学结构保持开放，不受当前 Demo 限制。
+
+#### E4｜以独立 Agent 模式接入 DSH
+
+e-m-c 接入 DeepSeek Harness（DSH）时，应作为独立可选的 **Agent Preset（Agent 模式）**，而不只是为 DSH 默认 Agent 增加一个按需调用的功能插件。
+
+该模式应将情绪、记忆与时间机制纳入 Agent 的持续认知过程，而非仅提供单项工具调用。
+
+DSH 的 Agent Preset 本身可以由 Cordis 插件组合实现。本决策约束的是 Agent 的组合与使用形态，不排斥内部使用插件，也不预先限定具体实现。
+
+技术参考：[Agent Preset](https://github.com/deepseek-ai/deepseek-harness/blob/master/packages/preset/agent-preset/README.md)、[DSH 架构](https://github.com/deepseek-ai/deepseek-harness/blob/master/docs/architecture.md)。
