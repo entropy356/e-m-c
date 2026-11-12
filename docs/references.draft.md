@@ -6,6 +6,19 @@
 - 允许暂存未经充分核实的线索，存在不确定性时明确标注。收录不代表认可其论断或决定采用其方案。
 - 本文件是资料收集草稿，不作为项目正式结论、架构决策或实现依赖。经过核实和整理的成果应独立写入正式文档。
 
+## 可用模型与 API 资源
+
+### Gemini Decision 1：提供免费 API 的多模态决策模型
+
+- 模型 ID：`gemini-decision-1`；由 Google 于 2026-11-11 发布，通过 Gemini Decisions API 调用。
+- 免费层：Google 官方定价表确认输入免费；免费额度受项目配额与速率限制约束，实际限额以 Google AI Studio 为准。付费层为每百万输入 Token 0.10 美元；模型不生成输出 Token。
+- 能力：对文本、图片、音频、视频和 PDF 做是非判断、多选与分级评分；一次请求最多评估 1,000 个问题，共享输入最高 256K Token，返回概率与置信度。并非普通对话生成模型。
+- 潜在用途：Agent 的工具选择、模型路由、上下文评估，以及记忆检索结果的相关性判定等；最后一项仅是 e-m-c 可能的实验方向，尚未经项目验证。
+- 注意：免费层数据可能用于改进 Google 产品，不应未经评估便提交敏感研究数据。
+- [Google 发布公告](https://blog.google/innovation-and-ai/technology/developers-tools/gemini-decisions-api/)
+- [Decisions API 官方文档](https://aistudio.google.com/docs/decisions-api)
+- [官方定价及免费层说明](https://aistudio.google.com/docs/pricing#gemini-decision)
+
 ## 近期关注的 Agent 基础设施与工作流
 
 ### DeepSeek Harness：可组合的 Agent Harness
