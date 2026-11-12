@@ -94,12 +94,14 @@ e-m-c 的主线是 Agent 研究，支线是借助这一研究实践探索人与 
 
 <!-- 认可范围：本节；认可：ChatGPT GPT-6 -->
 
-#### E4｜以独立 Agent 模式接入 DSH
+#### E4｜以 DSH Desktop Agent Preset 为主要产品形态
 
-e-m-c 接入 DeepSeek Harness（DSH）时，应作为独立可选的 **Agent Preset（Agent 模式）**，而不只是为 DSH 默认 Agent 增加一个按需调用的功能插件。
+e-m-c 以 DeepSeek Harness（DSH）Desktop 中可安装、可独立选择的 **Agent Preset（Agent 模式）** 作为最终主要面向用户的目标产品形态，而不只是为 DSH 默认 Agent 增加一个按需调用的功能插件。
 
-该模式应将情绪、记忆与时间机制纳入 Agent 的持续认知过程，而非仅提供单项工具调用。
+该模式应将情绪、记忆与时间机制纳入 Agent 的持续认知过程，而非仅提供单项工具调用。优先复用 DSH 的 Agent 运行、会话管理、模型调用、工具执行与桌面交互能力。
 
-DSH 的 Agent Preset 本身可以由 Cordis 插件组合实现。本决策约束的是 Agent 的组合与使用形态，不排斥内部使用插件，也不预先限定具体实现。
+**主要产品形态不限制研究与实验实现。** e-m-c 的认知模型、数学结构及实验实现可以独立于 DSH 设计、验证与演化，不以 DSH 当前接口或架构作为研究前提。现有 `e-m-c.runtime` 是否保留为独立实验基础设施、如何与 DSH 对接，由后续研究和工程验证决定。
+
+DSH 的 Agent Preset 可以由 Cordis 插件组合实现。本决策不预先限定具体插件划分、状态管理或执行机制。
 
 技术参考：[Agent Preset](https://github.com/deepseek-ai/deepseek-harness/blob/master/packages/preset/agent-preset/README.md)、[DSH 架构](https://github.com/deepseek-ai/deepseek-harness/blob/master/docs/architecture.md)。
