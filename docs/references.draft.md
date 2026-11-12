@@ -19,6 +19,15 @@
 - [Decisions API 官方文档](https://aistudio.google.com/docs/decisions-api)
 - [官方定价及免费层说明](https://aistudio.google.com/docs/pricing#gemini-decision)
 
+### 麦块云（Minekuai）：免费大模型 API 与算力服务
+
+- [官网及最新套餐、模型说明](https://minekuai.cn/)；[GPU 算力介绍](https://minekuai.cn/gpu.html)
+- **核查日期：2026-11-13**。官网首页标示文本模型 API 已在售：注册即为免费 Lite 档，标注「免费」的模型不限 Token、不扣鱼币，但 Lite 仅支持 1 个同时会话，付费模型另行计费；并非所有模型都免费。
+- 首页当前展示的免费模型：`deepseek-v4.1-flash-1017`（标为临时测试部署，可能变化）。平台宣称 DeepSeek、GLM 由其本地部署，兼容 OpenAI Chat Completions / Responses 和 Anthropic Messages 接口，支持流式与非流式请求；示例入口为 `https://minekuai.cn/v1/chat/completions`。
+- 其他资源：云服务器与物理服务器在售；RTX 5090 / 4090 / A100 / V100 GPU 算力尚未上线，官网公布 RTX 5090 预定价 ¥2.80/卡时。
+- **潜在用途**：作为 e-m-c 的低成本 LLM 推理后端，或供 Agent、编码工具接入实验；算力资源仅作后续部署备选。
+- **核实边界**：以上为官网自述，未实际注册、调用或测试质量、速度、稳定性及隐私保护。旧版 [API 宣传页](https://minekuai.cn/api.html) 仍写「即将上线」，与新版首页状态不同，优先以首页、登录后的模型广场与实际调用结果为准。避免未经审查上传敏感研究数据。
+
 ## 近期关注的 Agent 基础设施与工作流
 
 ### DeepSeek Harness：可组合的 Agent Harness
