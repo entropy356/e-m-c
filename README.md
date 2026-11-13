@@ -17,7 +17,7 @@ e-m-c 相关仓库按研究文档、模型实验、运行基础设施与观察�
 | **e-m-c.workbench** | AI 持久化研究工作台，整理观点、决策、规范与研究资料；不是源代码仓库。 | [本仓库](https://github.com/entropy356/e-m-c.workbench) |
 | **e-m-c.memory** | Memory 数学模型与 DeepSeek Harness 插件方向的独立实验。 | [仓库](https://github.com/entropy356/e-m-c.memory) · [数学模型](https://github.com/entropy356/e-m-c.memory/blob/main/docs/memory-model.md) · [DSH 插件](https://github.com/entropy356/e-m-c.memory/blob/main/docs/dsh-plugin.md) |
 | **e-m-c.runtime** | 可独立运行的模块化 Agent 实验运行环境，提供事件、上下文编排、状态事务、Provider 和 CLI 等基础设施。 | [仓库](https://github.com/entropy356/e-m-c.runtime) · [架构](https://github.com/entropy356/e-m-c.runtime/blob/main/docs/architecture.md) |
-| **e-m-c.extra** | 实验用聊天前端，展示运行链、会话与评分日志；其 README 描述的对接对象为早期 demo，不能据此推定已对接当前 runtime。 | [仓库](https://github.com/entropy356/e-m-c.extra) |
+| **e-m-c.extra** | 杂项与辅助项目仓库；目前包含实验用聊天前端，可展示运行链、会话与评分日志。其 README 描述的对接对象为早期 demo，不能据此推定已对接当前 runtime。 | [仓库](https://github.com/entropy356/e-m-c.extra) |
 
 ## AI 使用入口
 
