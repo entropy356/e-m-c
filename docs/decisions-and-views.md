@@ -66,7 +66,7 @@
 
 #### G7｜日常整理
 
-日常整理覆盖 `e-m-c.*` 系列仓库，包括讨论中顺手维护和按需主动巡检。按各仓库职责及既有规则操作。
+日常整理覆盖 `e-m-c.*` 系列仓库，包括讨论中顺手维护、按需主动巡检，以及已确认全局决策后的跨仓库同步。按各仓库职责及既有规则操作。
 
 AI 可自主完成低风险普通文档整理并提交，事后简要汇报；涉及观点或方向的实质取舍，交由人判断。原则上不自主修改 `rules/`，不因整理自动扩大为大规模研究、实验或重构。
 
@@ -119,3 +119,8 @@ e-m-c 以 DeepSeek Harness（DSH）Desktop 中可安装、可独立选择的 **A
 DSH 的 Agent Preset 可以由 Cordis 插件组合实现。本决策不预先限定具体插件划分、状态管理或执行机制。
 
 技术参考：[Agent Preset](https://github.com/deepseek-ai/deepseek-harness/blob/master/packages/preset/agent-preset/README.md)、[DSH 架构](https://github.com/deepseek-ai/deepseek-harness/blob/master/docs/architecture.md)。
+
+#### E5｜记忆研究方向
+
+当前放弃神经网络记忆模型研究，不再沿此方向投入新的研究工作。后续记忆机制围绕 Agent 持续认知、情绪与时间的相互作用及可观察行为选择，不因既有实验投入而延续某一机制。
+
