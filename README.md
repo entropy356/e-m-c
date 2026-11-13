@@ -30,4 +30,4 @@ AI 按任务读取相关内容；日常整理覆盖 e-m-c.* 系列仓库，各�
 
 ## 对接方向
 
-对接 DSH 时，以 DSH Desktop 为主要目标环境；e-m-c 作为独立可选的 Agent Preset（Agent 模式）呈现。具体决策见[决策与观点清单](docs/decisions-and-views.md#e4以独立-agent-模式接入-dsh)。
+对接 DSH 时，以 DSH Desktop 为主要目标环境；e-m-c 作为独立可选的 Agent Preset（Agent 模式）呈现。具体决策见[决策与观点清单](docs/decisions-and-views.md)。
