@@ -15,7 +15,7 @@ e-m-c 探索通过外部持久化状态支持 Agent 的持续认知，重点关�
 | [e-m-c.workbench](https://github.com/entropy356/e-m-c.workbench) | 研究文档、观点与决策工作台 |
 | [e-m-c.memory](https://github.com/entropy356/e-m-c.memory) | 记忆模型与 DSH 插件实验 |
 | [e-m-c.runtime](https://github.com/entropy356/e-m-c.runtime) | 模块化 Agent 运行环境 |
-| [e-m-c.extra](https://github.com/entropy356/e-m-c.extra) | 杂项与辅助项目，目前包含实验聊天前端 |
+| [e-m-c.extra](https://github.com/entropy356/e-m-c.extra) | 可复用代码和模块的收集仓库，包含工具与实验应用（目前有聊天前端） |
 
 ## AI 使用入口
 
