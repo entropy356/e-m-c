@@ -21,11 +21,12 @@ e-m-c 探索通过外部持久化状态支持 Agent 的持续认知，重点关�
 
 - [文档与文件约定](rules/documentation.md)：写入约定、文件职责与认可署名。**改文档前必读**
 - [决策与观点清单](docs/decisions-and-views.md)：当前有效的研究背景与指导观点。
-- [研究流程](rules/research.md)：模型研究的阶段与证据要求。
+- [研究流程](rules/workflows/research.md)：模型研究的阶段与证据要求。
+- [日常整理](rules/workflows/daily-maintenance.md)：覆盖 e-m-c.* 仓库的日常维护方式与权限边界。
 - [Draft 隔离](rules/drafts.md)：临时内容的隔离约定。
 - [规范维护](rules/meta.md)：仅在审查或修改规则时按需阅读。
 
-AI 按任务读取相关内容，并将值得保留的讨论结果更新至工作台。认可署名由 AI 主动添加；GitHub Actions 自动归档认可版本并清理失效署名，具体规则见[认可署名](rules/documentation.md#认可署名)。
+AI 按任务读取相关内容；日常整理覆盖 e-m-c.* 系列仓库，各仓库按自身职责维护，跨仓库值得复用的研究与决策保存至工作台。认可署名由 AI 主动添加；GitHub Actions 自动归档认可版本并清理失效署名，具体规则见[认可署名](rules/documentation.md#认可署名)。
 
 ## 对接方向
 
