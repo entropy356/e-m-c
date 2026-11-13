@@ -21,6 +21,7 @@ e-m-c 探索通过外部持久化状态支持 Agent 的持续认知，重点关�
 
 - [文档与文件约定](rules/documentation.md)：写入约定、文件职责与认可署名。**改文档前必读**
 - [决策与观点清单](docs/decisions-and-views.md)：当前有效的研究背景与指导观点。
+- [文本图检索研究](docs/text-graph-retrieval.md)：扩散检索的数学等价、实验结果与适用边界。
 - [研究流程](rules/workflows/research.md)：模型研究的阶段与证据要求。
 - [日常整理](rules/workflows/daily-maintenance.md)：覆盖 e-m-c.* 仓库的日常维护方式与权限边界。
 - [Draft 隔离](rules/drafts.md)：临时内容的隔离约定。
