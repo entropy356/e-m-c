@@ -110,21 +110,19 @@ e-m-c 的主线是 Agent 研究，支线是借助这一研究实践探索人与 
 
 #### E4｜以 DSH Desktop Agent Preset 为主要产品形态
 
-e-m-c 以 DeepSeek Harness（DSH）Desktop 中可安装、可独立选择的 **Agent Preset（Agent 模式）** 作为最终主要面向用户的目标产品形态，而不只是为 DSH 默认 Agent 增加一个按需调用的功能插件。
+e-m-c 面向用户的主要目标产品形态是 DSH Desktop 中可安装、独立选择的 **Agent Preset（Agent 模式）**。情绪、记忆与时间机制参与 Agent 的持续认知；产品实现优先复用 DSH 的运行、会话管理、模型调用、工具执行与桌面交互能力。
 
-该模式应将情绪、记忆与时间机制纳入 Agent 的持续认知过程，而非仅提供单项工具调用。面向用户的 DSH 产品实现优先复用 DSH 的 Agent 运行、会话管理、模型调用、工具执行与桌面交互能力；这一优先级不约束研究与实验阶段的技术选型。
+研究使用独立的 `e-m-c.runtime` 和云端实验环境，注重灵活性、轻量与低依赖。认知模型及实验实现自主演化，按需与 DSH 对接。
 
-**主要产品形态不限制研究与实验实现。** e-m-c 的认知模型、数学结构及实验实现可以独立于 DSH 设计、验证与演化，不以 DSH 当前接口或架构作为研究前提。自建 runtime 和云端实验环境的主要价值在于实验灵活性，而非建设另一套面向用户的 Agent runtime 生态。保留 `e-m-c.runtime` 作为独立、尽量低依赖的实验基础设施，避免研究阶段受到过多外部依赖和平台约束；与 DSH 的具体对接方式由后续验证决定。
-
-DSH 的 Agent Preset 可以由 Cordis 插件组合实现。本决策不预先限定具体插件划分、状态管理或执行机制。
+DSH Agent Preset 可通过 Cordis 插件组合实现，具体方案由工程验证确定。
 
 技术参考：[Agent Preset](https://github.com/deepseek-ai/deepseek-harness/blob/master/packages/preset/agent-preset/README.md)、[DSH 架构](https://github.com/deepseek-ai/deepseek-harness/blob/master/docs/architecture.md)。
 
 #### E5｜记忆研究方向
 
-当前放弃神经网络记忆模型研究，不再沿此方向投入新的研究工作。后续记忆机制围绕 Agent 持续认知、情绪与时间的相互作用及可观察行为选择，不因既有实验投入而延续某一机制。
+停止神经网络记忆模型研究。后续记忆机制以 Agent 持续认知、情绪与时间的相互作用及实际观察为依据。
 
 #### E6｜extra 的定位
 
-`e-m-c.extra` 用于收集可复用的代码和模块，不限于聊天前端；实验应用也可以作为其中的组成部分。现有实现是否值得单独提取复用，应根据实际用途判断，不把前端视为该仓库的唯一职责。
+`e-m-c.extra` 用于收集可复用的代码和模块，包括工具与实验应用。现有实现按实际复用价值决定是否提取。
 
