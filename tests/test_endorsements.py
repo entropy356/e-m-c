@@ -1,7 +1,9 @@
 import importlib.util
 from pathlib import Path
 import sys
+import tempfile
 import unittest
+from unittest import mock
 
 script = Path(__file__).resolve().parents[1] / 'scripts' / 'endorsements.py'
 spec = importlib.util.spec_from_file_location('endorsements', script)
@@ -107,6 +109,51 @@ class EndorsementTests(unittest.TestCase):
         cleaned, added = e.reconcile(before, after, 'docs/a.md', records)
         self.assertEqual(cleaned, after)
         self.assertEqual(len(added), 1)
+
+    def test_reconcile_alone_would_certify_changed_scope_when_prior_is_empty(self):
+        # Documents why run() must guard the prior tree: with no prior content,
+        # a copied signature on rewritten text looks exactly like a new one.
+        before = 'old\n<!-- 认可：GPT X -->\n'
+        after = 'new\n<!-- 认可：GPT X -->\n'
+        _, additions = e.reconcile('', after, 'docs/a.md', set())
+        self.assertEqual(len(additions), 1)
+        _, kept = e.reconcile(before, after, 'docs/a.md', set())
+        self.assertEqual((len(additions), len(kept)), (1, 0))
+
+    def test_first_push_is_recognised(self):
+        self.assertTrue(e.is_first_push(''))
+        self.assertTrue(e.is_first_push('0' * 40))
+        self.assertFalse(e.is_first_push('a' * 40))
+
+    def test_unreachable_prior_commit_fails_closed(self):
+        head = 'a' * 40
+
+        def fake_git(*args, **kwargs):
+            if args[0] == 'rev-parse':
+                if len(args) > 1 and args[1] == '--verify':
+                    return ''
+                return head + '\n'
+            return ''
+
+        with mock.patch.object(e, 'git', side_effect=fake_git):
+            with self.assertRaises(RuntimeError):
+                e.run('b' * 40, head, Path('unused'))
+
+    def test_first_push_runs_without_prior_tree(self):
+        head = 'a' * 40
+
+        def fake_git(*args, **kwargs):
+            if args[0] == 'rev-parse':
+                if len(args) > 1 and args[1] == '--verify':
+                    return ''
+                return head + '\n'
+            return ''
+
+        with mock.patch.object(e, 'git', side_effect=fake_git):
+            with tempfile.TemporaryDirectory() as directory:
+                manifest = Path(directory) / 'tags'
+                e.run('0' * 40, head, manifest)
+                self.assertEqual(manifest.read_text(encoding='utf-8'), '')
 
 
 if __name__ == '__main__':

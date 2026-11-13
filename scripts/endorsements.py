@@ -186,12 +186,20 @@ def load_records() -> set[tuple[str, str, str, str, str]]:
     return records
 
 
+def is_first_push(commit: str) -> bool:
+    return not commit or commit == "0" * 40
+
+
+def reachable(commit: str) -> bool:
+    return bool(git("rev-parse", "--verify", f"{commit}^{{commit}}", check=False))
+
+
 def text_at(commit: str, path: str) -> str:
     return git("show", f"{commit}:{path}", check=False)
 
 
 def markdown_paths(commit: str) -> list[str]:
-    if not commit or commit == "0" * 40:
+    if is_first_push(commit):
         return []
     return [p for p in git("ls-tree", "-r", "--name-only", commit).splitlines()
             if p.lower().endswith(".md")]
@@ -211,12 +219,19 @@ def commit_tag(item: Approval, path: str, commit: str, index: int) -> str:
 def run(before: str, head: str, manifest: Path) -> None:
     if git("rev-parse", "HEAD").strip() != head:
         raise RuntimeError("HEAD must match the triggering commit")
+    # A missing prior tree makes every signature look new, which would certify
+    # endorsements whose scope actually changed. Refuse instead of guessing.
+    if not is_first_push(before) and not reachable(before):
+        raise RuntimeError(
+            f"prior commit {before} is not reachable in this clone; "
+            "refusing to archive or remove endorsements without a prior tree"
+        )
     records = load_records()
     generated: list[str] = []
     changed: list[str] = []
     for path in markdown_paths(head):
         after = text_at(head, path)
-        prior = text_at(before, path) if before and before != "0" * 40 else ""
+        prior = "" if is_first_push(before) else text_at(before, path)
         cleaned, additions = reconcile(prior, after, path, records)
         for item, index in additions:
             tag = commit_tag(item, path, head, index)
