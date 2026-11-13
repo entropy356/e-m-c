@@ -106,7 +106,6 @@ e-m-c 的主线是 Agent 研究，支线是借助这一研究实践探索人与 
 
 具体数学结构保持开放。
 
-<!-- 认可范围：本节；认可：ChatGPT GPT-6 -->
 
 #### E4｜以 DSH Desktop Agent Preset 为主要产品形态
 
