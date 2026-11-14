@@ -72,6 +72,11 @@ AI 可自主完成低风险普通文档整理并提交，事后简要汇报；�
 
 具体流程见[日常整理](../rules/workflows/daily-maintenance.md)。
 
+#### G8｜Agent 的动机
+
+Agent 的“动机”本身很重要，是理解和设计 Agent 时需要关注的因素。
+
+
 ## 二、e-m-c 项目
 
 ### 背景
