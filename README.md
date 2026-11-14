@@ -21,6 +21,7 @@ e-m-c 探索通过外部持久化状态支持 Agent 的持续认知，重点关�
 
 - [文档与文件约定](rules/documentation.md)：写入约定、文件职责与认可署名。**改文档前必读**
 - [代码维护约定](rules/code-maintenance.md)：代码修改、兼容性与遗留实现的处理原则。
+- [研究协作约定](rules/research-collaboration.md)：Discussion、Issue 与 Docs 的分工。
 - [决策与观点清单](docs/decisions-and-views.md)：当前有效的研究背景与指导观点。
 - [文本图检索研究](docs/text-graph-retrieval.md)：扩散检索的数学等价、实验结果与适用边界。
 - [研究流程](rules/workflows/research.md)：模型研究的阶段与证据要求。
@@ -29,6 +30,12 @@ e-m-c 探索通过外部持久化状态支持 Agent 的持续认知，重点关�
 - [规范维护](rules/meta.md)：仅在审查或修改规则时按需阅读。
 
 AI 按任务读取相关内容；日常整理覆盖 e-m-c.* 系列仓库，各仓库按自身职责维护，跨仓库值得复用的研究与决策保存至工作台。认可署名由 AI 主动添加；GitHub Actions 自动归档认可版本并清理失效署名，具体规则见[认可署名](rules/documentation.md#认可署名)。
+
+## 研究协作入口
+
+- **开放讨论**：[GitHub Discussions](https://github.com/entropy356/e-m-c.workbench/discussions)（启用后）：研究问题、方向探索、假设与不同观点；尚未启用时，先在 Issues 中讨论。
+- **具体任务**：[GitHub Issues](https://github.com/entropy356/e-m-c.workbench/issues)：需要推进的分析、实验、调查或实现。
+- **长期成果**：稳定结论、设计与决策整理到 `docs/`，不复制完整讨论记录。
 
 ## 对接方向
 
