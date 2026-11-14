@@ -1,6 +1,6 @@
 # Draft 隔离
 
-Draft 用于隔离文件。任何一个 Draft 都应可以无感删除。Draft状态的**规则**不具有约束效力。
+Draft 用于隔离文件。任何一个 Draft 都应可以无感删除。Draft状态的规则不具有约束效力。
 
 ## 命名与边界
 
@@ -8,6 +8,7 @@ Draft 用于隔离文件。任何一个 Draft 都应可以无感删除。Draft�
 - 目录、Git 分支及仓库名以 `.draft` 结尾（如 `research.draft/`、`review.draft`）。
 
 ## 隔离
+- rules/下的Draft无需遵守和解释
 - 每个 Draft 相互独立，嵌套的 Draft 有独立边界。
 - Draft 之间需要互引时，合并为目录形式（`m1.draft/` 下放 `gate.md`、`evidence.md`）。边界是目录本身，目录内文件互引不算外部引用；跨目录仍按外部对待。
 - 对于任意一个Draft，其不得被外部文件提及（包括其他 Draft ，不包括issue、discussion等）；文档链接、代码导入、构建、测试、配置和工作流中的直接或间接依赖均在此范围内。
