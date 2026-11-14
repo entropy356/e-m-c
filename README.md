@@ -33,7 +33,7 @@ AI 按任务读取相关内容；日常整理覆盖 e-m-c.* 系列仓库，各�
 
 ## 研究协作入口
 
-- **开放讨论**：[GitHub Discussions](https://github.com/entropy356/e-m-c.workbench/discussions)（启用后）：研究问题、方向探索、假设与不同观点；尚未启用时，先在 Issues 中讨论。
+- **开放讨论**：[GitHub Discussions](https://github.com/entropy356/e-m-c.workbench/discussions)：研究问题、方向探索、假设与不同观点。
 - **具体任务**：[GitHub Issues](https://github.com/entropy356/e-m-c.workbench/issues)：需要推进的分析、实验、调查或实现。
 - **长期成果**：稳定结论、设计与决策整理到 `docs/`，不复制完整讨论记录。
 
